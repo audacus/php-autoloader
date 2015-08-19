@@ -13,20 +13,6 @@ class Autoloader {
 		$partsAppDir = self::cutArrayEnd($partsAppDir, $partsTargetClass);
 
 		$path = implode(DIRECTORY_SEPARATOR, array_merge($partsAppDir, $partsTargetClass)).'.php';
-// echo '<pre>';
-// echo 'targetClass: '.$targetClass.'<br />';
-// echo print_r(debug_backtrace()).'<br />';
-// echo 'partsAppDir: '.print_r($partsAppDir,1).'<br />';
-// echo 'backtraceIndex: '.$backtraceIndex.'<br />';
-
-// echo 'partsAppDir: '.print_r($partsAppDir,1).'<br />';
-// echo 'partsFileCalledFrom: '.print_r($partsFileCalledFrom, 1).'<br />';
-// echo 'partsClassCalledFrom: '.print_r($partsClassCalledFrom, 1).'<br />';
-// echo 'partsTargetClass: '.print_r($partsTargetClass, 1).'<br />';
-// echo $path.'<br />';
-// if ($targetClass === 'view\\AbstractView') {
-// 	die(print_r($partsClassCalledFrom));
-// }
 
 		if (file_exists($path)) {
 			require_once $path;
