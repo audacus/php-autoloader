@@ -10,6 +10,9 @@ class Someclass {
 		if (true) {
 			// do this here
 			// and that
+			if (false) {
+				echo 'hello :D';
+			}
 		}
 		return;
 	}
