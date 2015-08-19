@@ -7,6 +7,10 @@ class Someclass {
 	}
 
 	public function someCoolFunction() {
+		if (true) {
+			// do this here
+			// and that
+		}
 		return;
 	}
 }
