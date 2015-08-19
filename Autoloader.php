@@ -6,7 +6,10 @@ class Autoloader {
 		$backtrace = debug_backtrace();
 		$backtraceIndex = isset($backtrace[2]) ? 2 : 1;
 		$partsFileCalledFrom = explode(DIRECTORY_SEPARATOR, dirname($backtrace[1]['file']));
-		$partsClassCalledFrom = explode('\\', $backtrace[$backtraceIndex]['class']);
+		$partsClassCalledFrom = array();
+		if (isset($backtrace[$backtraceIndex]['class'])) {
+			$partsClassCalledFrom = explode('\\', $backtrace[$backtraceIndex]['class']);
+		}
 		$partsTargetClass = explode('\\', $targetClass);
 		$partsAppDir = self::cutArrayEnd($partsFileCalledFrom, $partsClassCalledFrom);
 
@@ -27,7 +30,7 @@ class Autoloader {
 	private static function cutArrayEnd($arrayCut, $arrayEnd) {
 		$arrayFinal = $arrayCut;
 		for ($i = 0; $i < count($arrayCut); $i++) {
-			if ($arrayEnd[0] === $arrayCut[$i] && !empty($arrayEnd[0])) {
+			if (isset($arrayEnd[0]) && $arrayEnd[0] === $arrayCut[$i] && !empty($arrayEnd[0])) {
 				$arrayFinal = array_splice($arrayCut, 0, $i);
 			}
 		}
