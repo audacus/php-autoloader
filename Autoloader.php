@@ -6,6 +6,7 @@ class Autoloader {
 		if (!defined('APPLICATION_PATH')) {
 			throw new \Exception('APPLICATION_PATH is not set!');
 		}
+
 		$partsTargetClass = explode('\\', $targetClass);
 		$path = APPLICATION_PATH.DIRECTORY_SEPARATOR.implode(DIRECTORY_SEPARATOR, $partsTargetClass).'.php';
 		if (file_exists($path)) {
