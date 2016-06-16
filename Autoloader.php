@@ -3,9 +3,10 @@
 class Autoloader {
 
 	public static function load($targetClass) {
+		require_once 'php-exception/AbstractException.php';
 		require_once 'FileNotFoundException.php';
 		require_once 'ClassNotFoundException.php';
-
+			
 		if (!defined('APPLICATION_PATH')) {
 			throw new \Exception('APPLICATION_PATH is not set!');
 		}
@@ -15,11 +16,9 @@ class Autoloader {
 		if (file_exists($path)) {
 			require_once $path;
 			if (!class_exists($targetClass)) {
-				// throw new ClassNotFoundException('Class \''.$targetClass.'\' does not exist!'.print_r(debug_backtrace(),1));
 				throw new ClassNotFoundException($targetClass);
 			}
 		} else {
-			// throw new FileNotFoundException('File \''.$path.'\' does not exist!'.print_r(debug_backtrace(),1));
 			throw new FileNotFoundException($path);
 		}
 	}
