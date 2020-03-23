@@ -1,3 +1,4 @@
 {
-    "name": "audacus/php-autoloader"
+    "name": "audacus/php-autoloader",
+    "version": "dev"
 }
