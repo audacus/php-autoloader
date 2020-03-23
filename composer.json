@@ -11,6 +11,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "audacus/php-exception": "master",
+        "audacus/php-exception": "master"
     }
 }
