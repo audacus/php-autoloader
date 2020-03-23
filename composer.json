@@ -1,3 +1,6 @@
 {
-    "name": "audacus/php-autoloader"
+    "name": "audacus/php-autoloader",
+    "autoload": {
+        "files": ["Autoloader.php"]
+    }
 }
