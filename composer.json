@@ -1,4 +1,4 @@
 {
     "name": "audacus/php-autoloader",
-    "version": "dev"
+    "require": {}
 }
