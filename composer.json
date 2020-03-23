@@ -1,6 +1,6 @@
 {
     "name": "audacus/php-autoloader",
     "autoload": {
-        "files": ["Autoloader.php"]
+        "files": ["Autoloader.php", "ClassNotFoundException.php", "FileNotFoundException.php"]
     }
 }

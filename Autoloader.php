@@ -3,10 +3,9 @@
 class Autoloader {
 
 	public static function load($targetClass) {
-		require_once 'php-exception/AbstractException.php';
 		require_once 'FileNotFoundException.php';
 		require_once 'ClassNotFoundException.php';
-			
+
 		if (!defined('APPLICATION_PATH')) {
 			throw new \Exception('APPLICATION_PATH is not set!');
 		}
